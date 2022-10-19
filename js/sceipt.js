@@ -9,19 +9,81 @@
 
 let arrayNumeri = [];
 const numeriFisso = 5;
-const numeriStampaHtml = document.getElementById('nuemriStampa')
+const numeriStampaHtml = document.getElementById('numeriStampa');
+const inputs = document.getElementById('inputs')
+const btn = document.getElementById('btn');
+    const numeriFine = document.getElementById('numeriFine');
 
-// Funzione che genera randomicamente i numeri 
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
-  }
-
+// funzione che nasconde il bottone
+    hideButton(btn);
 // fare un ciclo, che se i numeri non sono dentro l'array li pusha se no no 
 
-while(arrayNumeri.length < numeriFisso ){
+for(let i = 0; i < numeriFisso; i++ ){
  let randomNuber =  getRndInteger(1,100);
-    if(!arrayNumeri.includes(randomNuber)){
-  const NumeriVisual =  arrayNumeri.push(randomNuber);
-    numeriStampaHtml.innerText = NumeriVisual;
+    arrayNumeri.push(randomNuber);
+    numeriStampaHtml.innerText = arrayNumeri;
 }
+//     if(!arrayNumeri.includes(randomNuber)){
+//          arrayNumeri.push(randomNuber);
+//          console.log(randomNuber)
+//     //   numeriStampaHtml.innerHTML = arrayNumeri   
+// }
+    
+
+   setTimeout(time,2000)
+btn.addEventListener('click',()=>{
+    for(let i = 0; i<numeriFisso; i++){
+        const inputValue = document.getElementById('NumeroInserito'+i).value;
+        if(inputValue == arrayNumeri[i]){
+            numeriFine.innerHTML += `il numero della ${i+1} e corretto <3 <br> `
+        }else{
+            numeriFine.innerHTML += `il numero della ${i+1} e Sbagliato :( <br> `    
+            
+        }
     }
+})
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+// -----------Funzioni-----------------------------
+   function time(){
+    const numeriUtente = [];
+
+    for(let i = 0; i< numeriFisso; i++){
+        const input = document.createElement("input");
+        input.setAttribute('type','number');
+        input.setAttribute("id","NumeroInserito"+i)
+        inputs.appendChild(input);
+        numeriStampaHtml.innerHTML = ' '
+    }
+    showButton(btn);
+        
+
+   }
+
+
+   function hideButton(button){
+        button.style.display = 'none';
+   }
+   function showButton(button){
+    button.style.display = 'block';
+}
+
+   function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) );
+  }
+// creo un arry con i dati che mi da l'utente
+// confronto con i mie dati 
