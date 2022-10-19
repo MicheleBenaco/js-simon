@@ -22,7 +22,6 @@ while(arrayNumeri.length < numeriFisso ){
  let randomNuber =  getRndInteger(1,100);
     if(!arrayNumeri.includes(randomNuber)){
   const NumeriVisual =  arrayNumeri.push(randomNuber);
-        console.log(NumeriVisual);
-    
+    numeriStampaHtml.innerText = NumeriVisual;
 }
     }
