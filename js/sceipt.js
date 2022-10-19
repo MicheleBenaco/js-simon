@@ -19,9 +19,9 @@ function getRndInteger(min, max) {
 // fare un ciclo, che se i numeri non sono dentro l'array li pusha se no no 
 
 while(arrayNumeri.length < numeriFisso ){
-    getRndInteger(1.100);
-    if(arrayNumeri.includes){
-  const NumeriVisual =  arrayNumeri.push(getRndInteger);
+ let randomNuber =  getRndInteger(1,100);
+    if(!arrayNumeri.includes(randomNuber)){
+  const NumeriVisual =  arrayNumeri.push(randomNuber);
         console.log(NumeriVisual);
     
 }
