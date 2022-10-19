@@ -7,7 +7,7 @@
 
 // creare 5 numeri casuali e stamparli sull html
 
-let arrayNumeri = [''];
+let arrayNumeri = [];
 const numeriFisso = 5;
 const numeriStampaHtml = document.getElementById('nuemriStampa')
 
